@@ -18,7 +18,8 @@ const WeatherApp = () => {
   const [weatherIcon, setWeatherIcon] = useState(cloud_icon);
 
   //   const apiKey = process.env.API_KEY;
-  const apiKey = "57a6d0421bafba9bba2c0616a784d3f1";
+  //   you can use your own api key
+  const apiKey = "";
 
   const handleSearch = async () => {
     const element = document.getElementsByClassName("city-input");
@@ -42,7 +43,10 @@ const WeatherApp = () => {
       data.weather[0].icon === "04n"
     ) {
       setWeatherIcon(cloud_icon);
-    } else if (data.weather[0].icon === "09d" || data.weather[0].icon === "09n") {
+    } else if (
+      data.weather[0].icon === "09d" ||
+      data.weather[0].icon === "09n"
+    ) {
       setWeatherIcon(drizzle_icon);
     } else if (
       data.weather[0].icon === "10d" ||
@@ -51,7 +55,10 @@ const WeatherApp = () => {
       data.weather[0].icon === "11n"
     ) {
       setWeatherIcon(rain_icon);
-    } else if (data.weather[0].icon === "13d" || data.weather[0].icon === "13n") {
+    } else if (
+      data.weather[0].icon === "13d" ||
+      data.weather[0].icon === "13n"
+    ) {
       setWeatherIcon(snow_icon);
     } else {
       setWeatherIcon(cloud_icon);
